@@ -1,7 +1,7 @@
 <p class="title">My shopping cart</p>
 
-<app-shopping-cart-item></app-shopping-cart-item>
-<app-shopping-cart-item></app-shopping-cart-item>
+<app-shopping-cart-item *ngFor="let item of cartItems" [cartItem]="item">
+</app-shopping-cart-item>
 
 <p class="total">
     <span class="total-label">
