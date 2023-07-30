@@ -1,13 +1,16 @@
-<p class="title">My shopping cart</p>
+<h3 class="title">My shopping cart</h3>
 
-<app-shopping-cart-item *ngFor="let item of cartItems" [cartItem]="item">
+<app-shopping-cart-item 
+    *ngFor="let item of cartItems" 
+    [cartItem]="item"
+    (cartItemDelete)="deleteItem(item)">
 </app-shopping-cart-item>
 
 <p class="total">
     <span class="total-label">
         Total:
     </span>
-    $000.00
+    ${{ total }}
 </p>
 
 <button>Finish order</button>

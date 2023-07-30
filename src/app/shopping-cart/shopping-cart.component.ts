@@ -19,4 +19,16 @@ export class ShoppingCartComponent {
       price: 24.99
     }
   ]
+
+  get total(): number
+  {
+    return this.cartItems.reduce((acc, {price}) => acc += price, 0);
+  }
+
+  deleteItem(itemToDelete: CartItem)
+  {
+    this.cartItems = this.cartItems.filter(
+      item => item !== itemToDelete
+    );
+  }
 }
